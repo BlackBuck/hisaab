@@ -6,11 +6,10 @@ export type Payment = {
 }
 
 export type User = {
-    password(password: string, password1: any): string;
     id: string;
     name: string;
     email: string;
-    pass: string;
+    password: string;
 }
 
 export type ExpenseForm = {
