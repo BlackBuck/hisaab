@@ -35,7 +35,7 @@ export async function PaymentsChart() {
   // };
 
   const data: MonthlyExpense[] = await fetchMonthlyExpenses();
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="col-span-1 min-h-64 gap-1 lg:col-span-8 md:col-span-4 rounded-xl p-2">

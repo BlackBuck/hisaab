@@ -297,7 +297,6 @@ export async function fetchMonthlyExpenses(): Promise<MonthlyExpense[]>{
     //   }
     // ];
 
-    console.log(rows)
     return rows;
   } catch(err) {
     console.error("Database error: ", err);
