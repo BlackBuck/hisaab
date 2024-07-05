@@ -7,11 +7,12 @@ import { QueryResultRow } from "@vercel/postgres";
 import { ADLaM_Display } from "next/font/google";
 import { CurrencyRupeeIcon } from "@heroicons/react/24/outline";
 import React, { ReactNode } from "react";
+import { lusitana } from "../fonts";
 
 
 export async function PaymentsChart() {
   // const customTooltip = async (props: customTooltipTypeBar) => {
-  //   // "use server";
+  //   "use server";
   //   const { payload, active } = props;
   //   if (!active || !payload) return null;
   //   return (
@@ -38,29 +39,18 @@ export async function PaymentsChart() {
   // console.log(data);
 
   return (
-    <div className="col-span-1 min-h-64 gap-1 lg:col-span-8 md:col-span-4 rounded-xl p-2">
-      <h3>Monthly Expenses Chart</h3>
+    <div className="col-span-1 min-h-64 gap-1 lg:col-span-4 md:col-span-4 bg-gray-100 rounded-xl p-2">
+      <h3 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>Monthly Expenses Chart</h3>
       <BarChart
-        className="w-56"
+        className="w-full bg-white p-2 rounded-xl"
         data={data}
         index="month"
         categories={["expenses"]}
-        colors={["blue"]}
+        colors={['blue']}
         yAxisLabel="Months"
-        // customTooltip={customTooltip}
+        showTooltip={false}
       />
     </div>
-    // <Card>
-    //   <h3>Monthly Expenses</h3>
-    //   <BarChart
-    //       data={data}
-    //       index="month"
-    //       categories={["expenses"]}
-    //       colors={['blue']}
-    //       yAxisLabel="Months"
-    //       xAxisLabel="Expenses"
-    //       // customTooltip={customTooltip}
-    //     />
-    // </Card>
+
   );
 }

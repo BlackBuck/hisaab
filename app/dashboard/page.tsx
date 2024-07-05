@@ -1,4 +1,3 @@
-'use client';
 import { Suspense, useEffect, useState } from "react"
 import { CardSkeleton, PaymentsChartSkeleton, ExpenseSkeleton, LatestPaymentsSkeleton } from "@/app/ui/skeletons"
 import CardWrapper from "@/app/ui/dashboard/cards";

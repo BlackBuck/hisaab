@@ -4,6 +4,7 @@ import {z} from 'zod';
 import bcrypt from 'bcrypt';
 import { sql } from '@vercel/postgres';
 import type { User } from '@/app/lib/definitions';
+import { authConfig } from './auth.config';
 
 async function getUser(email: string): Promise<User | undefined> {
     try {
@@ -17,6 +18,10 @@ async function getUser(email: string): Promise<User | undefined> {
 
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
+    ...authConfig,
+    pages: {
+        signIn: "/login"
+    },
     providers: [
         Credentials({
             credentials: {
@@ -24,7 +29,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
                 password: { label: "password", type: "password" }
             },
 
-            async authorize(credentials): Promise<any> {
+            authorize: async (credentials): Promise<User | null> => {
                 const parsedCredentials = z
                     .object({ email: z.string().email(), password: z.string().min(6) })
                     .safeParse(credentials);
@@ -42,5 +47,5 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
                 return null;
             }
         })
-    ]
+    ],
 })

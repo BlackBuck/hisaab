@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 import SideNav from "../ui/dashboard/sidenav";
 import {useSession, SessionProvider} from 'next-auth/react';
 import AuthProvider from "@/app/ui/dashboard/session-provider";
