@@ -3,7 +3,7 @@ import { UpdateExpense, DeleteExpense } from '@/app/ui/dashboard/expenses/button
 import { formatDateToLocal } from '@/app/lib/utils';
 import { fetchFilteredBeneficiaries, fetchFilteredExpenses } from '@/app/lib/data';
 import { CurrencyRupeeIcon } from '@heroicons/react/24/outline';
-import { DeleteBeneficiary, UpdateBeneficiary } from './buttons';
+import { DeleteBeneficiary, UpdateBeneficiary } from '@/app/ui/dashboard/beneficiaries/buttons';
 import ExpenseType from "@/app/ui/dashboard/expenses/expense-type"
 
 export default async function ExpensesTable({

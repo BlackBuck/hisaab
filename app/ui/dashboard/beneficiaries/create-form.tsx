@@ -1,11 +1,11 @@
 'use client';
 import { CheckIcon, ClockIcon, CurrencyDollarIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { Button } from "../../button";
+import { Button } from "@/app/ui/button";
 import { Beneficiary } from "@/app/lib/definitions";
 import { fetchBeneficiaries } from "@/app/lib/data";
 import { useFormState } from "react-dom";
-import { CreateBeneficiary } from "./buttons";
+import { CreateBeneficiary } from "@/app/ui/dashboard/beneficiaries/buttons";
 import { useActionState } from "react";
 import { createBeneficiary } from "@/app/lib/actions";
 

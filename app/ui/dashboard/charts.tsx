@@ -7,7 +7,7 @@ import { QueryResultRow } from "@vercel/postgres";
 import { ADLaM_Display } from "next/font/google";
 import { CurrencyRupeeIcon } from "@heroicons/react/24/outline";
 import React, { ReactNode } from "react";
-import { lusitana } from "../fonts";
+import { lusitana } from "@/app/ui/fonts";
 
 
 export async function PaymentsChart() {

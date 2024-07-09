@@ -1,9 +1,9 @@
 import { Suspense, useEffect, useState } from "react"
 import { CardSkeleton, PaymentsChartSkeleton, ExpenseSkeleton, LatestPaymentsSkeleton } from "@/app/ui/skeletons"
 import CardWrapper from "@/app/ui/dashboard/cards";
-import { inter } from "../ui/fonts";
+import { inter } from "@/app/ui/fonts";
 import { PaymentsChart } from "@/app/ui/dashboard/charts";
-import LatestExpenses from "../ui/dashboard/latest-expenses";
+import LatestExpenses from "@/app/ui/dashboard/latest-expenses";
 
 
 export default function Page() {
