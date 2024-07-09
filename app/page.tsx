@@ -13,7 +13,7 @@ const Home: NextPage = () => {
                 <h1 className='text-4xl'>Hisaab-Kitaab</h1>
             </div>
             <div className='absolute right-1 bg-blue-300 rounded-lg text-xl p-2'>
-                <Link href={"/login"}>
+                <Link href="/login">
                     SignIn
                 </Link>
             </div>
