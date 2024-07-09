@@ -1,7 +1,7 @@
 import '@/app/ui/global.css';
 import {garamond} from "@/app/ui/fonts";
 
-export const experimental_ppr = true;
+// export const experimental_ppr = true;
 
 export default function RootLayout({
   children,
