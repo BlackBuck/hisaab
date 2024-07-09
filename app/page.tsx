@@ -8,7 +8,7 @@ import { PowerIcon } from '@heroicons/react/24/outline';
 const Home: NextPage = () => {
   return (
     <div className="min-h-screen bg-blue-100 rounded-xl flex flex-col items-center justify-center py-12">
-        <div className='flex flex-row w-full h-16 text-center items-center my-2 mt-0 mx-2 bg-gray-100 rounded-lg p-2'>
+        <div className='flex flex-row w-full h-16 text-center items-center m-2 mt-0 bg-gray-100 rounded-lg p-2'>
             <div className='w-60 min-h-full bg-blue-300 rounded-lg items-center text-center'>
                 <h1 className='text-4xl'>Hisaab-Kitaab</h1>
             </div>
@@ -19,12 +19,12 @@ const Home: NextPage = () => {
             </div>
         </div>
       <main className="flex flex-col bg-gray-100 rounded-xl items-center text-center p-2 md:p-6">
-        <div className="flex flex-col bg-gray-100 rounded-xl md:flex-row items-center text-center">
-          <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 items-center text-center">
-            <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl items-center text-center">
+        <div className="flex flex-col bg-blue-100 p-2 md:p-6 rounded-xl md:grid md:grid-cols-8 items-center text-center">
+          <div className="max-w-full px-4 sm:px-6 md:col-span-6 lg:px-8 items-center text-left">
+            <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl items-center text-left">
               Welcome to Hisaab-Kitaab
             </h1>
-            <p className="mt-4 text-lg text-gray-900">
+            <p className="mt-4 md:ml-6 text-lg text-gray-900">
               Welcome to Hisaab-Kitaab, your ultimate solution for managing
               personal finances. Our intuitive platform allows you to seamlessly
               track your spending, categorize expenses, and gain insightful
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
               tools you need to achieve financial clarity.
             </p>
           </div>
-          <div className="mt-10">
+          <div className="mt-10 md:col-span-2">
             <Image
               src="/hero3.jpeg"
               alt="Hero Image"
@@ -46,7 +46,7 @@ const Home: NextPage = () => {
           <div></div>
           
         </div>
-        <div className='items-start text-left'>
+        <div className='items-start text-left bg-blue-100 rounded-xl m-2 p-6'>
             <p className="mt-4 text-3xl text-black">
               With Hisaab-Kitaab, you can:
             </p>
