@@ -1,7 +1,7 @@
 import Link from "next/link";
 import NavLinks from "./navlinks";
 import PowerIcon from "@heroicons/react/24/outline/PowerIcon";
-import { signOut } from "next-auth/react";
+import { signout } from "@/app/lib/actions";
 import { SignOutButton } from "./signoutButton";
 
 export default function SideNav() {
@@ -22,7 +22,7 @@ export default function SideNav() {
         <form
           action={async () => {
             "use server";
-            await signOut();
+            await signout();
           }}
         >
           <button className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium text-black hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3">
