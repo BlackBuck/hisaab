@@ -29,7 +29,7 @@ const Home: NextPage = () => {
               personal finances. Our intuitive platform allows you to seamlessly
               track your spending, categorize expenses, and gain insightful
               reports to help you stay on top of your financial health. Whether
-              you're looking to save for a future goal or simply want to keep an
+              &apos re looking to save for a future goal or simply want to keep an
               eye on your daily spending, our Hisaab-Kitaab provides all the
               tools you need to achieve financial clarity.
             </p>
