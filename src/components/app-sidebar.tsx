@@ -1,4 +1,4 @@
-import { Calendar, Home, Inbox, IndianRupee, PersonStanding, Search, Settings } from "lucide-react"
+import { Home, IndianRupee, PersonStanding } from "lucide-react"
 
 import {
   Sidebar,

@@ -15,7 +15,6 @@ const routes = [
 export function Sidebar() {
   const pathname = usePathname()
   const [isSignedIn, setIsSignedIn] = useState(false) // Replace with actual auth state
-  const [isOpen, setIsOpen] = useState(false) // Mobile menu state
 
   return (
     <>
