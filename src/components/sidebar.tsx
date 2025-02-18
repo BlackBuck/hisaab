@@ -8,7 +8,7 @@ import { useState } from "react"
 import { SignedIn, SignedOut, SignInButton, SignOutButton } from "@clerk/nextjs"
 
 const routes = [
-  { name: "Home", path: "/", icon: Home },
+  { name: "Home", path: "/dashboard", icon: Home },
   { name: "Manage Expenses", path: "/expenses", icon: DollarSign },
   { name: "Manage Beneficiaries", path: "/beneficiaries", icon: Users },
 ]
@@ -29,7 +29,8 @@ export function Sidebar() {
 
       {/* Sidebar (For Desktop) & Mobile Dropdown Navbar */}
       <div
-        className={`fixed p-2 content-start text-left left-0 top-0 flex w-full flex-row bg-gray-800 text-white transition-transform md:relative md:top-0 md:flex md:h-full md:w-64 md:flex-col`}
+        className={`fixed p-2 content-start text-left left-0 top-0 flex w-full flex-row
+           border border-r-neutral-50 text-white transition-transform md:relative md:top-0 md:flex md:h-full md:w-64 md:flex-col`}
       >
         <div className="md:m-2 md:flex md:flex-row md:gap-2 justify-center align-middle hidden md:visible">
           <span className="text-2xl font-mono invisible md:visible">Hisaab Kitaab</span>
@@ -41,8 +42,8 @@ export function Sidebar() {
               <li key={route.path}>
                 <Link
                   href={route.path}
-                  className={`p-2 rounded-md gap-2 flex flex-row text-center align-middle items-center h-full md:items-start md:w-full hover:bg-gray-700 ${
-                    pathname === route.path ? "bg-gray-800" : "bg-gray-900"
+                  className={`p-2 rounded-md gap-2 flex flex-row text-center align-middle items-center h-full md:items-start md:w-full hover:bg-neutral-700 ${
+                    pathname === route.path ? "bg-neutral-800" : "bg-neutral-950"
                   }`}
                 >
                   <route.icon className="" />

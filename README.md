@@ -1,5 +1,7 @@
 # TODO
-## 18 Feb 2025, 21:00
-- [x] Set up authentication
-- [x] Show authenticated user on dashboard;
+## 19 Feb, 2025; 04:00
 - [x] Push config to database
+- [ ] Create the expenses route
+- [ ] Create the expense-type route
+- [ ] Retrieve actual data from the database
+

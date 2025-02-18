@@ -3,13 +3,13 @@ import { SignInButton } from "@clerk/nextjs";
 
 export default function JAMDrive() {
   return (
-    <div className="flex min-h-screen flex-col justify-between bg-neutral-900 text-white">
+    <div className="flex min-h-screen flex-col justify-between bg-black text-white">
       <header className="container mx-auto px-4 py-6">
         <h1 className="text-2xl font-bold">Hisaab Kitaab</h1>
       </header>
 
       <main className="justify-center align-middle">
-        <section className="bg-neutral-900 py-20">
+        <section className="bg-black py-20">
           <div className="container mx-auto px-4 text-center">
             <Button
               asChild
@@ -22,7 +22,7 @@ export default function JAMDrive() {
         </section>
       </main>
 
-      <footer className="bg-neutral-900 py-6">
+      <footer className="bg-black py-6">
         <div className="container mx-auto px-4 text-center text-sm text-neutral-400">
           © 2023 HISAAB KITAAB. All rights reserved.
         </div>

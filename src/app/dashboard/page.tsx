@@ -11,7 +11,7 @@ export default async function Home() {
     }
     else {
         return (
-            <div className="space-y-8">
+            <div className="space-y-8 ">
               <h1 className="text-3xl font-bold">Dashboard</h1>
               <DashboardSummary />
               <div className="grid gap-8 md:grid-cols-2">
