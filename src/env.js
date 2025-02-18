@@ -7,10 +7,6 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    AUTH_SECRET:
-      process.env.NODE_ENV === "production"
-        ? z.string()
-        : z.string().optional(),
     SINGLESTORE_HOST: z.string(), 
     SINGLESTORE_PORT: z.string(), 
     SINGLESTORE_USER: z.string(), 
@@ -44,7 +40,6 @@ export const env = createEnv({
     SINGLESTORE_USER: process.env.SINGLESTORE_USER,
     SINGLESTORE_PASSWORD: process.env.SINGLESTORE_PASSWORD,
     SINGLESTORE_DB_NAME: process.env.SINGLESTORE_DB_NAME,
-    AUTH_SECRET: process.env.AUTH_SECRET,
     NODE_ENV: process.env.NODE_ENV,
   },
   /**
