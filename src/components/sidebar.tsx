@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation"
 import { Home, DollarSign, Users, LogIn, LogOut, Factory } from "lucide-react"
 import { Button } from "~/components/ui/button"
 import { useState } from "react"
+import { SignedIn, SignedOut, SignInButton, SignOutButton } from "@clerk/nextjs"
 
 const routes = [
   { name: "Home", path: "/", icon: Home },
@@ -28,13 +29,11 @@ export function Sidebar() {
 
       {/* Sidebar (For Desktop) & Mobile Dropdown Navbar */}
       <div
-        className={`fixed left-0 top-0 flex w-full flex-row bg-gray-800 text-white transition-transform md:relative md:top-0 md:flex md:h-full md:w-64 md:flex-col`}
+        className={`fixed p-2 content-start text-left left-0 top-0 flex w-full flex-row bg-gray-800 text-white transition-transform md:relative md:top-0 md:flex md:h-full md:w-64 md:flex-col`}
       >
-        <div className="md:m-2 md:flex md:flex-row md:gap-2 justify-center align-middle">
-          <span className="text-2xl font-mono m-auto h-full w-10 md:invisible">
-            <Factory />
-          </span>
-          <span className="text-2xl font-mono invisible  md:visible">Hisaab Kitaab</span>
+        <div className="md:m-2 md:flex md:flex-row md:gap-2 justify-center align-middle hidden md:visible">
+          <span className="text-2xl font-mono invisible md:visible">Hisaab Kitaab</span>
+          {/* <span className="text-2xl font-mono md:invisible">HK</span> */}
         </div>
         <nav className="flex-1 align-middle">
           <ul className="flex flex-row justify-center gap-2 text-center align-middle md:flex-col">
@@ -54,23 +53,12 @@ export function Sidebar() {
           </ul>
         </nav>
         <div className="p-4">
-          <Button
-            variant="outline"
-            className="w-full"
-            onClick={() => setIsSignedIn(!isSignedIn)}
-          >
-            {isSignedIn ? (
-              <div className="flex flex-col justify-around align-middle md:justify-start">
-                <LogOut className="md:mr-2 md:h-4 md:w-4" />
-                <span className="invisible md:visible">Sign Out</span>
-              </div>
-            ) : (
-              <div className="flex flex-col items-center align-middle">
-                <LogIn className="md:mr-2 md:h-4 md:w-4" />
-                <span className="invisible md:visible">Sign In</span>
-              </div>
-            )}
-          </Button>
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <SignOutButton />
+          </SignedIn>
         </div>
       </div>
     </>
