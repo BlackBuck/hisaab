@@ -9,7 +9,7 @@ const expenseTypeEnum = singlestoreEnum('expense_type', ["Spending", "Earning"])
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
 export const createTable = singlestoreTableCreator(
-  (name) => `drive_clone_${name}`
+  (name) => `hisaab_${name}`
 )
 export const beneficiaries_table = createTable("beneficiaries", {
   id: bigint('id', {mode: "number", unsigned: true}).primaryKey(),
