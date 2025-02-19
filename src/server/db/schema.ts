@@ -1,6 +1,6 @@
-import { bigint, text, singlestoreTableCreator, timestamp, singlestoreEnum } from "drizzle-orm/singlestore-core";
+import { bigint, boolean, text, singlestoreTableCreator, timestamp, singlestoreEnum } from "drizzle-orm/singlestore-core";
 
-const expenseTypeEnum = singlestoreEnum('expense_type', ["Spending", "Earning"]);
+const expenseTypeEnum = singlestoreEnum('expense_type', ["Food", "Entertainment", "Essentials", "Earning"]);
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -19,6 +19,7 @@ export const beneficiaries_table = createTable("beneficiaries", {
 export const expenses_table = createTable("expenses", {
   id: bigint('id', {mode: "number", unsigned: true}).primaryKey(),
   expense_type: expenseTypeEnum,
+  
   ownerId: text("owner_id").notNull(),
   beneficiaryId: bigint("beneficiary_id", {mode: "number"}),
   createdAt: timestamp("created_at").notNull().defaultNow(),

@@ -92,6 +92,9 @@ importers:
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
+      sha3:
+        specifier: 1.2.6
+        version: 1.2.6
       superjson:
         specifier: ^2.2.2
         version: 2.2.2
