@@ -4,4 +4,5 @@
 - [ ] Create the expenses route
 - [ ] Create the expense-type route
 - [ ] Retrieve actual data from the database
+- [ ] Add AI-enabled categorization based on description
 
