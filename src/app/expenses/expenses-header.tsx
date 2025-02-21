@@ -10,10 +10,11 @@ export default function ExpensesHeader() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
-    <div className="flex justify-between items-center mb-6">
-      <Input className="max-w-sm" type="search" placeholder="Search expenses..." />
-      <Button onClick={() => setIsModalOpen(true)}>
-        <PlusCircle className="mr-2 h-4 w-4" /> Add Expense
+    <div className="flex justify-between items-center mb-6 mt-2">
+      <Input className="mx-2" type="search" placeholder="Search expenses..." />
+      <Button className="justify-center items-center md:justify-start" onClick={() => setIsModalOpen(true)}>
+        <PlusCircle className="h-4 w-4" />
+        <span className="hidden md:inline">Add Expense</span>
       </Button>
       <AddExpenseModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>

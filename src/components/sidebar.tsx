@@ -2,10 +2,9 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Home, DollarSign, Users, LogIn, LogOut, Factory } from "lucide-react"
-import { Button } from "~/components/ui/button"
-import { useState } from "react"
+import { Home, DollarSign, Users, PowerCircleIcon } from "lucide-react"
 import { SignedIn, SignedOut, SignInButton, SignOutButton } from "@clerk/nextjs"
+import { useIsMobile } from "~/hooks/use-mobile"
 
 const routes = [
   { name: "Home", path: "/dashboard", icon: Home },
@@ -14,8 +13,8 @@ const routes = [
 ]
 
 export function Sidebar() {
-  const pathname = usePathname()
-  const [isSignedIn, setIsSignedIn] = useState(false) // Replace with actual auth state
+  const pathname = usePathname();
+  const isMobile = useIsMobile();
 
   return (
     <>
@@ -29,36 +28,47 @@ export function Sidebar() {
 
       {/* Sidebar (For Desktop) & Mobile Dropdown Navbar */}
       <div
-        className={`fixed p-2 content-start text-left left-0 top-0 flex w-full flex-row
-           border border-r-neutral-50 text-white transition-transform md:relative md:top-0 md:flex md:h-full md:w-64 md:flex-col`}
+        className={`fixed left-0 top-0 mb-2 flex w-full flex-row justify-between border border-r-neutral-50 p-2 text-left text-white transition-transform md:relative md:top-0 md:flex md:h-full md:w-64 md:flex-col`}
       >
-        <div className="md:m-2 md:flex md:flex-row md:gap-2 justify-center align-middle hidden md:visible">
-          <span className="text-2xl font-mono invisible md:visible">Hisaab Kitaab</span>
+        <div>
+          <div className="m-2">
+            <span className={`${isMobile && "hidden"} font-mono text-2xl md:inline`}>
+              Hisaab Kitaab
+            </span>
+          </div>
           {/* <span className="text-2xl font-mono md:invisible">HK</span> */}
+          <nav className="align-middle">
+            <ul className="flex flex-row justify-center gap-2 text-center align-middle md:flex-col">
+              {routes.map((route) => (
+                <li key={route.path}>
+                  <Link
+                    href={route.path}
+                    className={`flex h-full flex-row items-center gap-2 rounded-md p-2 text-center align-middle hover:bg-neutral-700 md:w-full md:items-start ${
+                      pathname === route.path
+                        ? "bg-neutral-800"
+                        : "bg-neutral-950"
+                    }`}
+                  >
+                    <route.icon className="" />
+                    <div className={`${isMobile && "hidden"}`}>{route.name}</div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
-        <nav className="flex-1 align-middle">
-          <ul className="flex flex-row justify-center gap-2 text-center align-middle md:flex-col">
-            {routes.map((route) => (
-              <li key={route.path}>
-                <Link
-                  href={route.path}
-                  className={`p-2 rounded-md gap-2 flex flex-row text-center align-middle items-center h-full md:items-start md:w-full hover:bg-neutral-700 ${
-                    pathname === route.path ? "bg-neutral-800" : "bg-neutral-950"
-                  }`}
-                >
-                  <route.icon className="" />
-                  <span className="invisible md:visible">{route.name}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
         <div className="p-4">
           <SignedOut>
-            <SignInButton />
+            <div className="flex flex-row gap-1">
+              <PowerCircleIcon className={`${isMobile && "hidden"}`} />
+              <SignInButton />
+            </div>
           </SignedOut>
           <SignedIn>
-            <SignOutButton />
+            <div className="flex flex-row gap-1">
+              <PowerCircleIcon className={`${isMobile && "hidden"}`} />
+              <SignOutButton />
+            </div>
           </SignedIn>
         </div>
       </div>

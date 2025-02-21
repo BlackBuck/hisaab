@@ -1,4 +1,4 @@
-import { bigint, boolean, text, singlestoreTableCreator, timestamp, singlestoreEnum } from "drizzle-orm/singlestore-core";
+import { bigint, text, singlestoreTableCreator, timestamp, singlestoreEnum } from "drizzle-orm/singlestore-core";
 
 const expenseTypeEnum = singlestoreEnum('expense_type', ["Food", "Entertainment", "Essentials", "Earning"]);
 

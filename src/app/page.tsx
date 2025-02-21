@@ -2,7 +2,7 @@ import { Button } from "~/components/ui/button"
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
-export default function JAMDrive() {
+export default function HisaabKitaab() {
   return (
     <div className="flex min-h-screen flex-col bg-neutral-900 text-white justify-between">
       <header className="container mx-auto px-4 py-6">

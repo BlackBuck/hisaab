@@ -1,3 +1,5 @@
+"use client";
+
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "~/components/ui/table"
 import {
   Pagination,
@@ -8,6 +10,9 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "~/components/ui/pagination"
+import { Button } from "~/components/ui/button"
+import { PencilIcon, TrashIcon } from "lucide-react";
+import { useIsMobile } from "~/hooks/use-mobile";
 
 // This would typically come from a database or API
 const mockExpenses = [
@@ -19,6 +24,7 @@ const mockExpenses = [
 ]
 
 export default function ExpensesTable() {
+  const isMobile = useIsMobile();
   return (
     <div>
       <Table>
@@ -26,7 +32,7 @@ export default function ExpensesTable() {
           <TableRow>
             <TableHead>Description</TableHead>
             <TableHead>Amount</TableHead>
-            <TableHead>Date</TableHead>
+            <TableHead className={isMobile ? "hidden" : ""}>Date</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -34,7 +40,15 @@ export default function ExpensesTable() {
             <TableRow key={expense.id}>
               <TableCell>{expense.description}</TableCell>
               <TableCell>${expense.amount.toFixed(2)}</TableCell>
-              <TableCell>{expense.date}</TableCell>
+              <TableCell className={isMobile ? "hidden" : ""}>{expense.date}</TableCell>
+              <TableCell className="grid grid-cols-2 gap-2">
+              <Button className="hover:bg-green-500 hover:text-white">
+                  <PencilIcon className="m-1"/>
+                </Button>
+                <Button className="hover:bg-red-600 hover:text-white">
+                <TrashIcon className="dark m-1"/>
+                </Button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -66,6 +80,6 @@ export default function ExpensesTable() {
         </Pagination>
       </div>
     </div>
-  )
+  );
 }
 

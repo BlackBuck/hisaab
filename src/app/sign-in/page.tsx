@@ -1,7 +1,7 @@
 import { Button } from "~/components/ui/button"
 import { SignInButton } from "@clerk/nextjs";
 
-export default function JAMDrive() {
+export default function HisaabKitaab() {
   return (
     <div className="flex min-h-screen flex-col justify-between bg-black text-white">
       <header className="container mx-auto px-4 py-6">
