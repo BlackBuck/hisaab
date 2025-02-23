@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Home, DollarSign, Users, PowerCircleIcon } from "lucide-react"
-import { SignedIn, SignedOut, SignInButton, SignOutButton } from "@clerk/nextjs"
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs"
 import { useIsMobile } from "~/hooks/use-mobile"
 
 const routes = [
@@ -28,7 +28,7 @@ export function Sidebar() {
 
       {/* Sidebar (For Desktop) & Mobile Dropdown Navbar */}
       <div
-        className={`fixed left-0 top-0 mb-2 flex w-full flex-row justify-between border border-r-neutral-50 p-2 text-left text-white transition-transform md:relative md:top-0 md:flex md:h-full md:w-64 md:flex-col`}
+        className={`sticky left-0 top-0 mb-1 flex w-full flex-row justify-between border border-b-neutral-50 md:border-r-neutral-50 p-2 text-left text-white md:relative md:top-0 md:flex md:h-full md:w-64 md:flex-col`}
       >
         <div>
           <div className="m-2">
@@ -40,7 +40,7 @@ export function Sidebar() {
           <nav className="align-middle">
             <ul className="flex flex-row justify-center gap-2 text-center align-middle md:flex-col">
               {routes.map((route) => (
-                <li key={route.path}>
+                <li  className="items-center align-middle content-center" key={route.path}>
                   <Link
                     href={route.path}
                     className={`flex h-full flex-row items-center gap-2 rounded-md p-2 text-center align-middle hover:bg-neutral-700 md:w-full md:items-start ${
@@ -66,8 +66,8 @@ export function Sidebar() {
           </SignedOut>
           <SignedIn>
             <div className="flex flex-row gap-1">
-              <PowerCircleIcon className={`${isMobile && "hidden"}`} />
-              <SignOutButton />
+              <UserButton />
+              <span className={`${isMobile && "hidden"} md:ml-2`}>Account</span>
             </div>
           </SignedIn>
         </div>

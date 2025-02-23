@@ -18,7 +18,9 @@ export function LatestExpenses() {
           {latestExpenses.map((expense) => (
             <div key={expense.id} className="flex items-center">
               <div className="space-y-1">
-                <p className="text-sm font-medium leading-none">{expense.description}</p>
+                <p className="text-sm font-medium leading-none">
+                  {expense.description}
+                </p>
                 <p className="text-sm text-muted-foreground">{expense.date}</p>
               </div>
               <div className="ml-auto font-medium">{expense.amount}</div>
@@ -27,6 +29,6 @@ export function LatestExpenses() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 
