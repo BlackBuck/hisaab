@@ -75,7 +75,7 @@ export default function AddExpenseModal() {
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Add Expense</DialogTitle>
-          <DialogDescription>Enter the details of your expense here. Click save when you're done.</DialogDescription>
+          {/* <DialogDescription>Enter the details of your expense here. Click save when you're done.</DialogDescription> */}
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -88,7 +88,7 @@ export default function AddExpenseModal() {
                   <FormControl>
                     <Input type="number" step="0.01" {...field} />
                   </FormControl>
-                  <FormDescription>Enter the expense amount.</FormDescription>
+                  {/* <FormDescription>Enter the expense amount.</FormDescription> */}
                   <FormMessage />
                 </FormItem>
               )}
@@ -102,7 +102,7 @@ export default function AddExpenseModal() {
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
-                  <FormDescription>Briefly describe the expense.</FormDescription>
+                  {/* <FormDescription>Briefly describe the expense.</FormDescription> */}
                   <FormMessage />
                 </FormItem>
               )}
@@ -138,7 +138,7 @@ export default function AddExpenseModal() {
                       />
                     </PopoverContent>
                   </Popover>
-                  <FormDescription>The date when the expense occurred.</FormDescription>
+                  {/* <FormDescription>The date when the expense occurred.</FormDescription> */}
                   <FormMessage />
                 </FormItem>
               )}
@@ -163,7 +163,7 @@ export default function AddExpenseModal() {
                       ))}
                     </SelectContent>
                   </Select>
-                  <FormDescription>Choose the category that best fits this expense.</FormDescription>
+                  {/* <FormDescription>Choose the category that best fits this expense.</FormDescription> */}
                   <FormMessage />
                 </FormItem>
               )}
