@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { CalendarIcon, PlusCircle } from "lucide-react"
+import { CalendarIcon } from "lucide-react"
 import { format } from "date-fns"
 
 import { cn } from "~/lib/utils"
@@ -30,7 +30,6 @@ const formSchema = z.object({
   category: z.string(),
 })
 
-// TODO: Change this to the original categories in the database
 const expenseCategories = [
   "Food",
   "Transportation",
@@ -44,7 +43,7 @@ const expenseCategories = [
   "Other",
 ]
 
-export default function AddExpenseModal() {
+export function AddExpenseModal() {
   const [open, setOpen] = useState(false)
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -67,10 +66,7 @@ export default function AddExpenseModal() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="justify-center items-center md:justify-start">
-        <PlusCircle className="h-4 w-4" />
-        <span className="hidden md:inline">Add Expense</span>
-        </Button>
+        <Button variant="outline">Add Expense</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -168,7 +164,7 @@ export default function AddExpenseModal() {
                 </FormItem>
               )}
             />
-            <Button type="submit">Add Expense</Button>
+            <Button type="submit">Save Expense</Button>
           </form>
         </Form>
       </DialogContent>
